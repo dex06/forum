@@ -20,6 +20,7 @@
 		C625753225CACC12009C3AD1 /* forumUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C625753125CACC12009C3AD1 /* forumUITests.swift */; };
 		C625754B25CADA15009C3AD1 /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C625754A25CADA15009C3AD1 /* CollectionViewController.swift */; };
 		C625755B25CAEEED009C3AD1 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C625755A25CAEEED009C3AD1 /* DetailViewController.swift */; };
+		C625756025CAF4A0009C3AD1 /* DetailCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C625755F25CAF4A0009C3AD1 /* DetailCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		C625753325CACC12009C3AD1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C625754A25CADA15009C3AD1 /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
 		C625755A25CAEEED009C3AD1 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		C625755F25CAF4A0009C3AD1 /* DetailCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				C625751325CACBFC009C3AD1 /* ViewController.swift */,
 				C625751525CACBFC009C3AD1 /* Main.storyboard */,
 				C625755A25CAEEED009C3AD1 /* DetailViewController.swift */,
+				C625755F25CAF4A0009C3AD1 /* DetailCollectionViewCell.swift */,
 				C625754A25CADA15009C3AD1 /* CollectionViewController.swift */,
 				C625751825CACC0F009C3AD1 /* Assets.xcassets */,
 				C625751A25CACC0F009C3AD1 /* LaunchScreen.storyboard */,
@@ -281,6 +284,7 @@
 				C44A18C425CAD54000DF1A22 /* Comment.swift in Sources */,
 				C44A18C525CAD54000DF1A22 /* Post.swift in Sources */,
 				C625755B25CAEEED009C3AD1 /* DetailViewController.swift in Sources */,
+				C625756025CAF4A0009C3AD1 /* DetailCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

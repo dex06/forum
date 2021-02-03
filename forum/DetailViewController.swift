@@ -16,7 +16,7 @@ var comments = [Comment]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        guard var sp : Post = self.selectedPost else { return Post() }
+        guard let sp : Post = selectedPost else { return }
         self.getComments(postId:sp.id)
         //posts.append(Post(id: 1, title: "test", body: "test", userId: 1))
         // Uncomment the following line to preserve selection between presentations
@@ -39,7 +39,7 @@ var comments = [Comment]()
                 guard let data = data else {return}
                 self.comments = try! JSONDecoder().decode([Comment].self, from :data)
                 
-                print("Got \(self.posts.count) comments")
+                print("Got \(self.comments.count) comments")
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }

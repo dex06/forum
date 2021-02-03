@@ -91,7 +91,7 @@ class DetailViewController: UICollectionViewController {
         
         cell.myLabel.text = comments[indexPath.row].name
         
-        cell.backgroundColor = .green
+        cell.backgroundColor = .lightGray
         return cell
         
         

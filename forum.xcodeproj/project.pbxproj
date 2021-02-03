@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C44A18C425CAD54000DF1A22 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A18C225CAD54000DF1A22 /* Comment.swift */; };
+		C44A18C525CAD54000DF1A22 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = C44A18C325CAD54000DF1A22 /* Post.swift */; };
 		C625751025CACBFC009C3AD1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C625750F25CACBFC009C3AD1 /* AppDelegate.swift */; };
 		C625751225CACBFC009C3AD1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C625751125CACBFC009C3AD1 /* SceneDelegate.swift */; };
 		C625751425CACBFC009C3AD1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C625751325CACBFC009C3AD1 /* ViewController.swift */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		C44A18C225CAD54000DF1A22 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		C44A18C325CAD54000DF1A22 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		C625750C25CACBFC009C3AD1 /* forum.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = forum.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C625750F25CACBFC009C3AD1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C625751125CACBFC009C3AD1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +103,8 @@
 		C625750E25CACBFC009C3AD1 /* forum */ = {
 			isa = PBXGroup;
 			children = (
+				C44A18C225CAD54000DF1A22 /* Comment.swift */,
+				C44A18C325CAD54000DF1A22 /* Post.swift */,
 				C625750F25CACBFC009C3AD1 /* AppDelegate.swift */,
 				C625751125CACBFC009C3AD1 /* SceneDelegate.swift */,
 				C625751325CACBFC009C3AD1 /* ViewController.swift */,
@@ -261,6 +267,8 @@
 				C625751425CACBFC009C3AD1 /* ViewController.swift in Sources */,
 				C625751025CACBFC009C3AD1 /* AppDelegate.swift in Sources */,
 				C625751225CACBFC009C3AD1 /* SceneDelegate.swift in Sources */,
+				C44A18C425CAD54000DF1A22 /* Comment.swift in Sources */,
+				C44A18C525CAD54000DF1A22 /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

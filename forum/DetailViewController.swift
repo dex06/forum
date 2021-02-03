@@ -8,9 +8,9 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
-var selectedPost: Post
+//var aPost: Post
 
-class CollectionViewController: UICollectionViewController {
+class DetailViewController: UICollectionViewController {
 var posts = [Post]()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,26 +25,6 @@ var posts = [Post]()
         // Do any additional setup after loading the view.
     }
 
-    private func getPosts(){
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else {return}
-                let task = URLSession.shared.dataTask(with: url) {
-                    (data,resp,err) in if let err = err {
-                        print("An error occured: ", err)
-                        return
-                    }
-                
-                guard let data = data else {return}
-                self.posts = try! JSONDecoder().decode([Post].self, from :data)
-                print("Got \(self.posts.count) posts")
-                
-                DispatchQueue.main.async {
-                    self.collectionView.reloadData()
-                }
-                
-                
-                }
-                task.resume()
-    }
     
     
     
@@ -55,19 +35,11 @@ var posts = [Post]()
         selectedPost = posts[indexPath.row]
         
         // Déclencher la transition vers l'écran suivant (Identifier donné dans le Storyboard)
-        performSegue(withIdentifier: "showDetail", sender: self)
+        performSegue(withIdentifier: "IDENTIFIER", sender: self)
     }
 
     // Fonction appelée quand on change d'écran (avant la transition)
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // On test si on va bien à l'écran suivant (Identifier donné dans le Storyboard)
-        if (segue.identifier == "showDetail") {
-            // On récupére l'écran de destination
-            let destination = segue.destination as! DetailViewController
-            // On passe le postId ou l'objet lui-même Post
-            destination.postId = selectedPost
-        }
-    }
+
 
     // MARK: UICollectionViewDataSource
 

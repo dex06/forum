@@ -21,10 +21,10 @@ class CollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         
         addSubview(myLabel)
-        myLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
-        myLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
-        myLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
-        myLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
+        //myLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 20).isActive = true
+        //myLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -20).isActive = true
+        //myLabel.topAnchor.constraint(equalTo: topAnchor, constant: 20).isActive = true
+        //myLabel.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -20).isActive = true
     }
     
     required init?(coder: NSCoder) {

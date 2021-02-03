@@ -11,31 +11,54 @@ private let reuseIdentifier = "Cell"
 //var aPost: Post
 
 class DetailViewController: UICollectionViewController {
-var posts = [Post]()
+var selectedPost : Post?
+var comments = [Comment]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getPosts()
+        
+        guard var sp : Post = self.selectedPost else { return Post() }
+        self.getComments(postId:sp.id)
         //posts.append(Post(id: 1, title: "test", body: "test", userId: 1))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(CollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(DetailCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
 
-    
+        private func getComments(postId:Int){
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts/\(postId)/comments") else {return}
+                let task = URLSession.shared.dataTask(with: url) {
+                    (data,resp,err) in if let err = err {
+                        print("An error occured: ", err)
+                        return
+                    }
+                
+                guard let data = data else {return}
+                self.comments = try! JSONDecoder().decode([Comment].self, from :data)
+                
+                print("Got \(self.posts.count) comments")
+                DispatchQueue.main.async {
+                    self.collectionView.reloadData()
+                }
+                
+                }
+                task.resume()
+    }
     
     
     // Fonction appelée quand on clic sur un élément de la liste
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // Stocker dans la variable d'instance, le post choisi
-        selectedPost = posts[indexPath.row]
+
+        //selectedPost = posts[indexPath.row]
         
         // Déclencher la transition vers l'écran suivant (Identifier donné dans le Storyboard)
-        performSegue(withIdentifier: "IDENTIFIER", sender: self)
+        
+        //performSegue(withIdentifier: "IDENTIFIER", sender: self)
     }
 
     // Fonction appelée quand on change d'écran (avant la transition)
@@ -51,16 +74,15 @@ var posts = [Post]()
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return posts.count
+        return comments.count
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DetailCollectionViewCell
     
         // Configure the cell
-        cell.myLabel.text = posts[indexPath.row].title
-        cell.backgroundColor = .green
+        cell.myLabel.text = comments[indexPath.row].body
     
         return cell
     }

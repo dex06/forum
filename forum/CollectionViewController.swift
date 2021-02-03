@@ -92,7 +92,7 @@ var posts = [Post]()
     
         // Configure the cell
         cell.myLabel.text = posts[indexPath.row].title
-        cell.backgroundColor = .green
+        cell.backgroundColor = .lightGray
     
         return cell
     }

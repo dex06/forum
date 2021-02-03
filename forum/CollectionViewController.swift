@@ -10,19 +10,36 @@ import UIKit
 private let reuseIdentifier = "Cell"
 
 class CollectionViewController: UICollectionViewController {
-
+var posts = [Post]()
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.getPosts()
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(CollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
 
         // Do any additional setup after loading the view.
     }
 
+    private func getPosts(){
+        guard let url = URL(string: "https://jsonplaceholder.typicode.com/posts") else {return}
+                let task = URLSession.shared.dataTask(with: url) {
+                    (data,resp,err) in if let err = err {
+                        print("An error occured: ", err)
+                        return
+                    }
+                
+                guard let data = data else {return}
+                self.posts = try! JSONDecoder().decode([Post].self, from :data)
+                print("Got \(self.posts.count) posts")
+                self.collectionView.reloadData()
+                
+                }
+                task.resume()
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -47,9 +64,12 @@ class CollectionViewController: UICollectionViewController {
     }
 
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! CollectionViewCell
     
         // Configure the cell
+        cell.myLabel.text = posts[indexPath.row].title
+        cell.backgroundColor = .green
     
         return cell
     }

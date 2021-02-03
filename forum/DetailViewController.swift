@@ -7,24 +7,27 @@
 
 import UIKit
 
-private let reuseIdentifier = "Cell"
+private let reuseIdentifier2 = "Cell2"
 //var aPost: Post
 
 class DetailViewController: UICollectionViewController {
-var selectedPost : Post?
-var comments = [Comment]()
+    
+   
+    
+    var selectedPost : Post?
+    var comments = [Comment]()
     override func viewDidLoad() {
         super.viewDidLoad()
         
         guard let sp : Post = selectedPost else { return }
-        print(sp)
+        
         self.getComments(postId:sp.id)
         //posts.append(Post(id: 1, title: "test", body: "test", userId: 1))
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Register cell classes
-        self.collectionView!.register(DetailCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView!.register(DetailCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier2)
 
         // Do any additional setup after loading the view.
     }
@@ -41,6 +44,7 @@ var comments = [Comment]()
                 self.comments = try! JSONDecoder().decode([Comment].self, from :data)
                 
                 print("Got \(self.comments.count) comments")
+               
                 DispatchQueue.main.async {
                     self.collectionView.reloadData()
                 }
@@ -78,14 +82,19 @@ var comments = [Comment]()
         return comments.count
     }
 
+    
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as! DetailCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier2, for: indexPath) as! DetailCollectionViewCell
     
-        // Configure the cell
-        cell.myLabel.text = comments[indexPath.row].body
-    
+        
+        
+        cell.myLabel.text = comments[indexPath.row].name
+        
+        cell.backgroundColor = .green
         return cell
+        
+        
     }
 
     // MARK: UICollectionViewDelegate

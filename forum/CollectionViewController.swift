@@ -96,6 +96,10 @@ var posts = [Post]()
     
         return cell
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: collectionView.frame.size.width, height: 50)
+    }
 
     // MARK: UICollectionViewDelegate
 

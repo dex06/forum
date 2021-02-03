@@ -92,7 +92,6 @@
 			isa = PBXGroup;
 			children = (
 				C625750E25CACBFC009C3AD1 /* forum */,
-				C625752525CACC11009C3AD1 /* forumTests */,
 				C625753025CACC12009C3AD1 /* forumUITests */,
 				C625750D25CACBFC009C3AD1 /* Products */,
 			);
@@ -121,6 +120,7 @@
 				C625755A25CAEEED009C3AD1 /* DetailViewController.swift */,
 				C625755F25CAF4A0009C3AD1 /* DetailCollectionViewCell.swift */,
 				C625754A25CADA15009C3AD1 /* CollectionViewController.swift */,
+				C625752525CACC11009C3AD1 /* forumTests */,
 				C625751825CACC0F009C3AD1 /* Assets.xcassets */,
 				C625751A25CACC0F009C3AD1 /* LaunchScreen.storyboard */,
 				C625751D25CACC0F009C3AD1 /* Info.plist */,

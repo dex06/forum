@@ -8,7 +8,7 @@
 import UIKit
 
 private let reuseIdentifier = "Cell"
-var selectedPost: Post
+var selectedPostIndex: Int = -1
 
 class CollectionViewController: UICollectionViewController {
 var posts = [Post]()
@@ -52,7 +52,7 @@ var posts = [Post]()
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         // Stocker dans la variable d'instance, le post choisi
-        selectedPost = posts[indexPath.row]
+        selectedPostIndex = indexPath.row
         
         // Déclencher la transition vers l'écran suivant (Identifier donné dans le Storyboard)
         performSegue(withIdentifier: "showDetail", sender: self)
@@ -64,8 +64,12 @@ var posts = [Post]()
         if (segue.identifier == "showDetail") {
             // On récupére l'écran de destination
             let destination = segue.destination as! DetailViewController
+            
+            destination.selectedPost = posts[selectedPostIndex]
+            
+            
             // On passe le postId ou l'objet lui-même Post
-            destination.postId = selectedPost
+            
         }
     }
 

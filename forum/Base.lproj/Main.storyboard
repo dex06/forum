@@ -152,10 +152,10 @@
             </objects>
             <point key="canvasLocation" x="-36" y="-157"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Detail View Controller-->
         <scene sceneID="zx7-HQ-KYp">
             <objects>
-                <collectionViewController id="LE1-Be-08l" sceneMemberID="viewController">
+                <collectionViewController id="LE1-Be-08l" customClass="DetailViewController" customModule="forum" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="b3b-XI-7ex">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

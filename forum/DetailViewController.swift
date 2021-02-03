@@ -17,6 +17,7 @@ var comments = [Comment]()
         super.viewDidLoad()
         
         guard let sp : Post = selectedPost else { return }
+        print(sp)
         self.getComments(postId:sp.id)
         //posts.append(Post(id: 1, title: "test", body: "test", userId: 1))
         // Uncomment the following line to preserve selection between presentations

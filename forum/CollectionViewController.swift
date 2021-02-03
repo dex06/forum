@@ -13,7 +13,8 @@ class CollectionViewController: UICollectionViewController {
 var posts = [Post]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.getPosts()
+        //self.getPosts()
+        posts = [Post(id: 1, title: "test", body: "test", userId: 1)]
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
